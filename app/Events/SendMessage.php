@@ -13,7 +13,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 class SendMessage implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
+    public $message
     /**
      * Create a new event instance.
      *
@@ -21,7 +21,7 @@ class SendMessage implements ShouldBroadcast
      */
     public function __construct($message)
     {
-        $this->message = "Hellow brother";
+        $this->message = $message;
     }
 
     /**
